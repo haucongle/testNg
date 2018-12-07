@@ -1,6 +1,6 @@
 import {Component, OnInit, Inject, ElementRef, AfterViewInit} from '@angular/core';
 import flatpickr from 'flatpickr';
-
+import * as moment from 'moment';
 import 'pivottable/dist/pivot.min.js';
 import 'pivottable/dist/pivot.min.css';
 
@@ -23,13 +23,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         flatpickr('.flatpickr', {
             enableTime: true,
+            // enableSeconds: true,
             time_24hr: true,
             altInput: true,
-            altFormat: 'Y-m-d h:i K',
-            dateFormat: 'Y-m-d\\TH:i:S',
+            altFormat: 'Y-m-d h:i:S K',
             maxDate: 'today',
             onChange: (selectedDates, dateStr, instance) => {
-                console.log(dateStr);
+                console.log(moment(dateStr).format());
             }
         });
     }
