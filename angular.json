@@ -30,9 +30,13 @@
               "src/styles.styl",
               "node_modules/flatpickr/dist/flatpickr.min.css",
               "node_modules/flatpickr/dist/themes/material_blue.css",
+              "node_modules/pivottable/dist/pivot.css"
             ],
             "scripts": [
-              "node_modules/flatpickr/dist/flatpickr.min.js"
+              "node_modules/flatpickr/dist/flatpickr.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "node_modules/pivottable/dist/pivot.min.js"
             ]
           },
           "configurations": {
