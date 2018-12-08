@@ -24,7 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         flatpickr('.flatpickr', {
             enableTime: true,
             // enableSeconds: true,
-            time_24hr: true,
+            // time_24hr: true,
             altInput: true,
             altFormat: 'Y-m-d h:i:S K',
             maxDate: 'today',
@@ -59,18 +59,19 @@ export class AppComponent implements OnInit, AfterViewInit {
 
         // here is the magic
         targetElement.pivotUI([
-                {com: 'com1', time: '2018-12-03T08:00:00+08:00', All: '1', Pickup: '1'},
-                {com: 'com1', time: '2018-12-03T08:15:00+08:00', All: '3', Pickup: '2'},
-                {com: 'com1', time: '2018-12-03T08:30:00+08:00', All: '2', Pickup: '3'},
-                {com: 'com1', time: '2018-12-03T08:45:00+08:00', All: '4', Pickup: '4'},
-                {com: 'com2', time: '2018-12-03T08:00:00+08:00', All: '6', Pickup: '1'},
-                {com: 'com2', time: '2018-12-03T08:15:00+08:00', All: '9', Pickup: '2'},
-                {com: 'com2', time: '2018-12-03T08:30:00+08:00', All: '7', Pickup: '8'},
-                {com: 'com2', time: '2018-12-03T08:45:00+08:00', All: '8', Pickup: '5'},
+                {Com: 'CSO_ACHIEVERS', Accepted: '2', Successful: '2', Unsuccessful: '0'},
+                {Com: 'CSO_CLAIMS', Accepted: '1', Successful: '1', Unsuccessful: '0'},
+                {Com: 'CSO_DPS', Accepted: '3', Successful: '2', Unsuccessful: '1'},
+                {Com: 'CSO_ESH', Accepted: '5', Successful: '4', Unsuccessful: '1'},
+                {Com: 'CSO_GI', Accepted: '31', Successful: '27', Unsuccessful: '4'},
+                {Com: 'CSO_GI CLAIMS', Accepted: '4', Successful: '4', Unsuccessful: '0'},
+                {Com: 'CSO_HEALTH CONNECT', Accepted: '6', Successful: '4', Unsuccessful: '2'},
+                {Com: 'CSO_LIFE INSURANCE CLAIMS', Accepted: '9', Successful: '9', Unsuccessful: '0'},
+                {Com: 'CSO_MAIN CS', Accepted: '44', Successful: '39', Unsuccessful: '5'},
             ],
             {
-                rows: ['com'],
-                cols: ['time']
+                rows: ['Com'],
+                cols: ['Accepted']
             });
     }
 }
