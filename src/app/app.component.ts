@@ -67,20 +67,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         }
 
         // here is the magic
-        targetElement.pivotUI([
-                {Com: 'CSO_ACHIEVERS', Accepted: '2', Successful: '2', Unsuccessful: '0'},
-                {Com: 'CSO_CLAIMS', Accepted: '1', Successful: '1', Unsuccessful: '0'},
-                {Com: 'CSO_DPS', Accepted: '3', Successful: '2', Unsuccessful: '1'},
-                {Com: 'CSO_ESH', Accepted: '5', Successful: '4', Unsuccessful: '1'},
-                {Com: 'CSO_GI', Accepted: '31', Successful: '27', Unsuccessful: '4'},
-                {Com: 'CSO_GI CLAIMS', Accepted: '4', Successful: '4', Unsuccessful: '0'},
-                {Com: 'CSO_HEALTH CONNECT', Accepted: '6', Successful: '4', Unsuccessful: '2'},
-                {Com: 'CSO_LIFE INSURANCE CLAIMS', Accepted: '9', Successful: '9', Unsuccessful: '0'},
-                {Com: 'CSO_MAIN CS', Accepted: '44', Successful: '39', Unsuccessful: '5'},
-            ],
+        targetElement.pivotUI(this.json,
             {
-                rows: ['Com'],
-                cols: ['Accepted']
+                rows: ['name'],
+                cols: ['gender']
             });
     }
 }
