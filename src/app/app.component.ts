@@ -1,8 +1,7 @@
 import {Component, OnInit, Inject, ElementRef, AfterViewInit} from '@angular/core';
 import flatpickr from 'flatpickr';
 import * as moment from 'moment';
-import 'pivottable/dist/pivot.min.js';
-import 'pivottable/dist/pivot.min.css';
+import csvjson from 'csvjson';
 
 declare var jQuery: any;
 
@@ -14,10 +13,20 @@ declare var jQuery: any;
 export class AppComponent implements OnInit, AfterViewInit {
 
     el: ElementRef;
+    csv: string;
+    json: string;
 
     constructor(@Inject(ElementRef)el: ElementRef) {
         this.el = el;
-
+        this.csv = '"sr","name","age","gender"\n' +
+            '    "1","rocky","33","male"\n' +
+            '    "2","jacky","22","male"\n' +
+            '    "3","suzy","21","female"';
+        const options = {
+            delimiter : ',', // optional
+            quote     : '"' // optional
+        };
+        this.json = csvjson.toObject(this.csv, options);
     }
 
     ngOnInit() {
